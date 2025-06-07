@@ -41,3 +41,9 @@ const product: Product = {
   price: 1500,
 };
 ```
+
+## How to Use TypeScript with Array
+
+```ts
+const mixedArray: (number | string)[] = [1, "hello", 42, "world"];
+```
