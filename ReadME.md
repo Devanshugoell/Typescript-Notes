@@ -83,3 +83,23 @@ function printId(id: string | number) {
 printId(101); // OK
 printId("ABC123"); // OK
 ```
+
+## What is a Literal Type in TypeScript?
+
+A **literal type** in TypeScript allows a variable to have a **specific, exact value** (not just a general type like `string` or `number`).
+
+Instead of saying a variable is of type `string`, you can say it's exactly `"success"` or `"error"`.
+
+---
+
+### ✅ Example
+
+```ts
+type Status = "success" | "error" | "loading";
+
+let currentStatus: Status;
+
+currentStatus = "success"; // ✅ OK
+currentStatus = "error"; // ✅ OK
+currentStatus = "done"; // ❌ Error: "done" is not assignable to type 'Status'
+```
