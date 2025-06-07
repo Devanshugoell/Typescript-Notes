@@ -25,3 +25,19 @@ function add(a: number, b: number): number {
 
 add("5", 10); // ❌ Error: Argument of type 'string' is not assignable to parameter of type 'number'
 ```
+
+## How to Use TypeScript with Objects
+
+```ts
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+}
+
+const product: Product = {
+  id: 1,
+  title: "Laptop",
+  price: 1500,
+};
+```
