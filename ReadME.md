@@ -132,3 +132,22 @@ function add(num1: number, num2: number): number {
   return num1 + num2;
 }
 ```
+
+## 🔁 Using Callback Functions in TypeScript
+
+In TypeScript, you can specify the type of a **callback function** to ensure it receives the correct arguments and returns the expected type.
+
+---
+
+### ✅ Example
+
+```ts
+function greet(name: string, callback: (message: string) => void): void {
+  const message = `Hello, ${name}!`;
+  callback(message);
+}
+
+greet("Devanshu", (msg) => {
+  console.log(msg); // Output: Hello, Devanshu!
+});
+```
