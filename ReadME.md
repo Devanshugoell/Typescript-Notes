@@ -1,8 +1,8 @@
-## 📌 Why Use TypeScript?
+## Why Use TypeScript?
 
 TypeScript catches many potential runtime errors **at compile time**, before the code moves to production. This helps prevent bugs early in the development process.
 
-### 🔍 Example
+### Example
 
 #### JavaScript:
 
