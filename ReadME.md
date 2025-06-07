@@ -118,3 +118,17 @@ type Status = "success" | "error" | "loading";
 
 let currentStatus: Status = "loading";
 ```
+
+## 🔁 Function Return Type in TypeScript
+
+You can explicitly specify the **return type** of a function in TypeScript using a colon (`:`) after the parameter list.
+
+---
+
+### ✅ Example
+
+```ts
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
+```
