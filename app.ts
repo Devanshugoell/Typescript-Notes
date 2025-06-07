@@ -1,8 +1,11 @@
-function add (num1 :number , num2 : number) {
-    return num1 + num2
+interface Person {
+    name : string,
+    age : number,
+    product : (number | string )[]
 }
 
-let num1 = 23;
-let num2 = 32;
-
-add(num1 , num2)
+const person : Person = {
+    name : "Devanshu",
+    age : 22,
+    product : [23,"Devanshu",242,"System" ]
+}
