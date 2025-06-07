@@ -187,3 +187,19 @@ if (typeof value === "string") {
   console.log(value.toUpperCase()); // ✅ Safe
 }
 ```
+
+## 🚫 `never` in TypeScript
+
+The `never` type represents **values that never occur**.
+
+It’s used when a function **never returns** (like it always throws an error or has an infinite loop), or when you’re handling **exhaustive checks**.
+
+---
+
+### ✅ Example 1: Function that never returns
+
+```ts
+function throwError(message: string): never {
+  throw new Error(message);
+}
+```
