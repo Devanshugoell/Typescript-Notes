@@ -1,6 +1,6 @@
 ## Why Use TypeScript?
 
-TypeScript catches many potential runtime errors **at compile time**, before the code moves to production. This helps prevent bugs early in the development process.
+TypeScript helps catch many potential bugs **during development** through static type checking, even before the code runs. This reduces the chances of runtime errors and makes the codebase more reliable.
 
 ### Example
 
