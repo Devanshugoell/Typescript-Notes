@@ -151,3 +151,39 @@ greet("Devanshu", (msg) => {
   console.log(msg); // Output: Hello, Devanshu!
 });
 ```
+
+## 🆚 `unknown` vs `any` in TypeScript
+
+Both `unknown` and `any` are used when you don't know the type of a value ahead of time — but they behave differently.
+
+---
+
+### 🔓 `any`
+
+- Disables type checking.
+- You can perform any operation without errors.
+- **Unsafe**, because TypeScript skips all checks.
+
+```ts
+let value: any = "Hello";
+value.toFixed(); // ✅ No error, but will crash at runtime
+```
+
+## 🔐 `unknown` in TypeScript
+
+The `unknown` type tells TypeScript that you don’t know the exact type **yet**, but unlike `any`, it **requires type checking** before you use it — making it **safer**.
+
+---
+
+### ✅ Example
+
+```ts
+let value: unknown = "Hello";
+
+// ❌ Error: Object is of type 'unknown'
+// value.toFixed();
+
+if (typeof value === "string") {
+  console.log(value.toUpperCase()); // ✅ Safe
+}
+```
