@@ -66,3 +66,20 @@ enum Status {
 const taskStatus: Status = Status.InProgress;
 console.log(taskStatus); // Output: 2
 ```
+
+## What is a Union in TypeScript?
+
+A **union** in TypeScript allows a variable to hold **more than one type** — using the `|` (pipe) symbol.
+
+---
+
+### ✅ Example
+
+```ts
+function printId(id: string | number) {
+  console.log("Your ID is: " + id);
+}
+
+printId(101); // OK
+printId("ABC123"); // OK
+```
