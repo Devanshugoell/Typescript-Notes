@@ -103,3 +103,18 @@ currentStatus = "success"; // ✅ OK
 currentStatus = "error"; // ✅ OK
 currentStatus = "done"; // ❌ Error: "done" is not assignable to type 'Status'
 ```
+
+## What is a Type Alias in TypeScript?
+
+A **type alias** in TypeScript is a way to give a **custom name to a type** — whether it's a primitive, object, union, or even a function type.  
+It improves **readability** and **reusability**, and helps define complex types more clearly.
+
+---
+
+### ✅ Example
+
+```ts
+type Status = "success" | "error" | "loading";
+
+let currentStatus: Status = "loading";
+```
