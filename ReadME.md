@@ -48,7 +48,7 @@ const product: Product = {
 const mixedArray: (number | string)[] = [1, "hello", 42, "world"];
 ```
 
-## 📌 What is `enum` in TypeScript?
+## What is `enum` in TypeScript?
 
 An `enum` (enumeration) is a special TypeScript feature that lets you define a set of **named constants** — making your code more **readable and manageable**.
 
