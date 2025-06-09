@@ -203,3 +203,32 @@ function throwError(message: string): never {
   throw new Error(message);
 }
 ```
+
+## Using TypeScript with Classes
+
+TypeScript enhances classes by allowing you to define **types for properties**, **constructor parameters**, and **methods** — making your object-oriented code safer and more maintainable.
+
+---
+
+### ✅ Basic Example
+
+```ts
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet(): void {
+    console.log(
+      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
+    );
+  }
+}
+
+const devanshu = new Person("Devanshu", 22);
+devanshu.greet(); // Output: Hello, my name is Devanshu and I'm 22 years old.
+```
