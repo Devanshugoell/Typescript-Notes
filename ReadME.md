@@ -526,18 +526,18 @@ const user2: User = {
 
 ## 📊 Type vs Interface Comparison Table
 
-| Feature                          | `interface`                | `type`                                        |
-| -------------------------------- | -------------------------- | --------------------------------------------- | ----- |
-| Basic Object Shape               | ✅ Yes                     | ✅ Yes                                        |
-| Extends / Implements             | ✅ `extends`, `implements` | ✅ via intersection (`&`)                     |
-| Declaration Merging              | ✅ Yes                     | ❌ No                                         |
-| Union Types                      | ❌ No                      | ✅ Yes (`'A'                                  | 'B'`) |
-| Tuple Types                      | ❌ No                      | ✅ Yes (`[number, string]`)                   |
-| Primitive Types (`string`, etc.) | ❌ No                      | ✅ Yes (`type ID = string`)                   |
-| React Props                      | ✅ Common                  | ✅ Common                                     |
-| Computed Properties              | ❌ Limited                 | ✅ Yes (`type A = { [key: string]: string }`) |
-| Use in Discriminated Unions      | ❌ Limited                 | ✅ Best suited                                |
-| Recommended for Class Contracts  | ✅ Yes                     | ❌ Not recommended                            |
+| Feature                          | `interface`                | `type`                               |
+| -------------------------------- | -------------------------- | ------------------------------------ | ----- |
+| Basic Object Shape               | ✅ Yes                     | ✅ Yes                               |
+| Extends / Implements             | ✅ `extends`, `implements` | ✅ via intersection (`&`)            |
+| Declaration Merging              | ✅ Yes                     | ❌ No                                |
+| Union Types                      | ❌ No                      | ✅ Yes (`'A'                         | 'B'`) |
+| Tuple Types                      | ❌ No                      | ✅ Yes (`[number, string]`)          |
+| Primitive Types (`string`, etc.) | ❌ No                      | ✅ Yes (`type ID = string`)          |
+| React Props                      | ✅ Common                  | ✅ Common                            |
+| Computed Properties              | ❌ Limited                 | ✅ Yes (`{ [key: string]: string }`) |
+| Use in Discriminated Unions      | ❌ Limited                 | ✅ Best suited                       |
+| Recommended for Class Contracts  | ✅ Yes                     | ❌ Not recommended                   |
 
 ---
 
