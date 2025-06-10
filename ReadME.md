@@ -426,3 +426,38 @@ console.log(MathUtil.calculateCircumference(10)); // ✅ 62.8318
 // const obj = new MathUtil();
 // obj.PI ❌ Error: PI is static and should be accessed via the class name
 ```
+
+## 🧩 TypeScript `abstract` Classes and Methods
+
+The `abstract` keyword in TypeScript is used to define **base classes** that are meant to be **extended**, not instantiated directly.
+
+- **Abstract class**: Acts as a blueprint. You cannot create an instance of it.
+- **Abstract method**: Must be implemented by derived (child) classes.
+
+---
+
+### ✅ Example: Abstract Class in Action
+
+```ts
+abstract class Animal {
+  constructor(public name: string) {}
+
+  abstract makeSound(): void; // must be implemented by subclasses
+
+  move(): void {
+    console.log(`${this.name} is moving`);
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log("Woof! Woof!");
+  }
+}
+
+const dog = new Dog("Buddy");
+dog.makeSound(); // ✅ Woof! Woof!
+dog.move(); // ✅ Buddy is moving
+
+// const animal = new Animal("Generic"); // ❌ Error: Cannot create an instance of an abstract class
+```
