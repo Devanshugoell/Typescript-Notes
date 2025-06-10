@@ -496,3 +496,50 @@ const user: Person = {
 user.greet(); // ✅ Hello, my name is Devanshu
 // user.id = 2; // ❌ Error: Cannot assign to 'id' because it is a read-only property
 ```
+
+## 📚 TypeScript Type Aliases
+
+A `type` in TypeScript is used to create an **alias** for a type. It can describe **primitives**, **unions**, **tuples**, **functions**, and even **object shapes**, similar to interfaces.
+
+---
+
+### ✅ Example: Type Alias for Object
+
+```ts
+type User = {
+  name: string;
+  age: number;
+  isAdmin?: boolean; // optional
+};
+
+const user1: User = {
+  name: "Devanshu",
+  age: 22,
+};
+
+const user2: User = {
+  name: "Admin",
+  age: 30,
+  isAdmin: true,
+};
+```
+
+## 📊 Type vs Interface Comparison Table
+
+| Feature                          | `interface`                | `type`                                        |
+| -------------------------------- | -------------------------- | --------------------------------------------- | ----- |
+| Basic Object Shape               | ✅ Yes                     | ✅ Yes                                        |
+| Extends / Implements             | ✅ `extends`, `implements` | ✅ via intersection (`&`)                     |
+| Declaration Merging              | ✅ Yes                     | ❌ No                                         |
+| Union Types                      | ❌ No                      | ✅ Yes (`'A'                                  | 'B'`) |
+| Tuple Types                      | ❌ No                      | ✅ Yes (`[number, string]`)                   |
+| Primitive Types (`string`, etc.) | ❌ No                      | ✅ Yes (`type ID = string`)                   |
+| React Props                      | ✅ Common                  | ✅ Common                                     |
+| Computed Properties              | ❌ Limited                 | ✅ Yes (`type A = { [key: string]: string }`) |
+| Use in Discriminated Unions      | ❌ Limited                 | ✅ Best suited                                |
+| Recommended for Class Contracts  | ✅ Yes                     | ❌ Not recommended                            |
+
+---
+
+> 🔹 **Use `interface`** when working with objects, class contracts, and you want to benefit from declaration merging.  
+> 🔸 **Use `type`** when you need to define unions, tuples, or primitives, or need more flexibility in complex type compositions.
