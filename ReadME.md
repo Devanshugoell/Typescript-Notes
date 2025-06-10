@@ -524,7 +524,7 @@ const user2: User = {
 };
 ```
 
-## 📊 Type vs Interface Comparison Table
+## 🔍 `interface` vs `type` in TypeScript
 
 | Feature                          | `interface`                | `type`                               |
 | -------------------------------- | -------------------------- | ------------------------------------ | ----- |
@@ -538,8 +538,6 @@ const user2: User = {
 | Computed Properties              | ❌ Limited                 | ✅ Yes (`{ [key: string]: string }`) |
 | Use in Discriminated Unions      | ❌ Limited                 | ✅ Best suited                       |
 | Recommended for Class Contracts  | ✅ Yes                     | ❌ Not recommended                   |
-
----
 
 > 🔹 **Use `interface`** when working with objects, class contracts, and you want to benefit from declaration merging.  
 > 🔸 **Use `type`** when you need to define unions, tuples, or primitives, or need more flexibility in complex type compositions.
