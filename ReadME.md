@@ -526,18 +526,44 @@ const user2: User = {
 
 ## 🔍 `interface` vs `type` in TypeScript
 
-| Feature                          | `interface`                | `type`                               |
-| -------------------------------- | -------------------------- | ------------------------------------ | ----- |
-| Basic Object Shape               | ✅ Yes                     | ✅ Yes                               |
-| Extends / Implements             | ✅ `extends`, `implements` | ✅ via intersection (`&`)            |
-| Declaration Merging              | ✅ Yes                     | ❌ No                                |
-| Union Types                      | ❌ No                      | ✅ Yes (`'A'                         | 'B'`) |
-| Tuple Types                      | ❌ No                      | ✅ Yes (`[number, string]`)          |
-| Primitive Types (`string`, etc.) | ❌ No                      | ✅ Yes (`type ID = string`)          |
-| React Props                      | ✅ Common                  | ✅ Common                            |
-| Computed Properties              | ❌ Limited                 | ✅ Yes (`{ [key: string]: string }`) |
-| Use in Discriminated Unions      | ❌ Limited                 | ✅ Best suited                       |
-| Recommended for Class Contracts  | ✅ Yes                     | ❌ Not recommended                   |
+### ✅ Common Features
+
+- Both can describe object shapes
+- Both can be used for React props
+- Both support extension (in different ways)
+
+---
+
+### 🔁 Differences
+
+- **Extension:**
+
+  - `interface`: Uses `extends` / `implements`
+  - `type`: Uses intersection types (`&`)
+
+- **Declaration Merging:**
+
+  - `interface`: ✅ Supported
+  - `type`: ❌ Not supported
+
+- **Union & Tuple Types:**
+
+  - `interface`: ❌ Not supported
+  - `type`: ✅ Supports unions (`'A' | 'B'`) and tuples (`[number, string]`)
+
+- **Primitive & Computed Types:**
+
+  - `interface`: ❌ Cannot define primitives or computed keys
+  - `type`: ✅ Can define primitives (`type A = string`) and mapped types
+
+- **Discriminated Unions:**
+
+  - `interface`: ❌ Limited
+  - `type`: ✅ Best suited
+
+- **Class Contracts:**
+  - `interface`: ✅ Recommended
+  - `type`: ❌ Not recommended
 
 > 🔹 **Use `interface`** when working with objects, class contracts, and you want to benefit from declaration merging.  
 > 🔸 **Use `type`** when you need to define unions, tuples, or primitives, or need more flexibility in complex type compositions.
