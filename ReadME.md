@@ -466,6 +466,8 @@ dog.move(); // ✅ Buddy is moving
 
 An `interface` defines the **shape of an object**. It is used to **enforce type-checking** and provide better structure in your code.
 
+**We can also extends interfaces**
+
 - Describes properties, methods, and their types.
 - Supports optional properties, readonly properties, and method signatures.
 - Can be **extended** or **implemented** by classes.
