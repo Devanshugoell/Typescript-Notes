@@ -399,3 +399,30 @@ console.log(p.info); // ✅ Getter: Devanshu is 25 years old
 
 // p.age = -5;       // ❌ Throws error: Age cannot be negative
 ```
+
+## ⚡ TypeScript `static` Keyword
+
+In TypeScript (and JavaScript), the `static` keyword defines a method or property that belongs to the **class itself**, rather than instances of the class.
+
+- You **don't need to create an object** to access static members.
+- Access them using the class name directly.
+
+---
+
+### ✅ Example: Using `static` Property and Method
+
+```ts
+class MathUtil {
+  static PI: number = 3.14159;
+
+  static calculateCircumference(radius: number): number {
+    return 2 * MathUtil.PI * radius;
+  }
+}
+
+console.log(MathUtil.PI); // ✅ 3.14159
+console.log(MathUtil.calculateCircumference(10)); // ✅ 62.8318
+
+// const obj = new MathUtil();
+// obj.PI ❌ Error: PI is static and should be accessed via the class name
+```
