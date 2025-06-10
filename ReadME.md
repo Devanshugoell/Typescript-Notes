@@ -274,3 +274,34 @@ console.log(emp.getDetails()); // ✅ public method
 // console.log(emp.salary);   // ❌ Error: 'salary' is private
 // console.log(emp.department); // ❌ Error: 'department' is protected
 ```
+
+## 🔐 TypeScript Class with `readonly` and Optional Property
+
+TypeScript provides special property modifiers to enhance the safety and flexibility of your classes:
+
+- **`readonly`**: The property cannot be reassigned after its initial value is set (usually in the constructor).
+- **`?` (optional)**: The property is not required; it may or may not be present.
+
+---
+
+### ✅ Example: `Book` Class with `readonly` and Optional Properties
+
+```ts
+class Book {
+  readonly id: number; // cannot be modified after initialization
+  title: string;
+  author?: string; // optional property
+
+  constructor(id: number, title: string, author?: string) {
+    this.id = id;
+    this.title = title;
+    if (author) this.author = author;
+  }
+}
+
+const book = new Book(1, "Atomic Habits");
+console.log(book.id); // ✅ 1
+
+book.title = "New Title"; // ✅ OK
+// book.id = 2;               // ❌ Error: Cannot assign to 'id' because it is a read-only property
+```
