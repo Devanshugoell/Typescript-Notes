@@ -214,21 +214,63 @@ TypeScript enhances classes by allowing you to define **types for properties**, 
 
 ```ts
 class Person {
-  name: string;
-  age: number;
-
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
+  constructor(public name: string, public age: number) {}
 
   greet(): void {
-    console.log(
-      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
-    );
+    console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
   }
 }
 
 const devanshu = new Person("Devanshu", 22);
 devanshu.greet(); // Output: Hello, my name is Devanshu and I'm 22 years old.
+```
+
+## 🔐 TypeScript Class with Access Modifiers
+
+TypeScript provides **access modifiers** to control the visibility of class members:
+
+- `public`: accessible from anywhere (default)
+- `private`: accessible only within the class
+- `protected`: accessible within the class and subclasses
+
+---
+
+### ✅ Example: Access Modifiers in Action
+
+```ts
+class Employee {
+  constructor(
+    public name: string,
+    private salary: number,
+    protected department: string
+  ) {}
+
+  public getDetails(): string {
+    return `Name: ${this.name}, Department: ${this.department}`;
+  }
+
+  private getSalary(): number {
+    return this.salary;
+  }
+}
+
+class Manager extends Employee {
+  constructor(name: string, salary: number, department: string) {
+    super(name, salary, department);
+  }
+
+  public getDepartment(): string {
+    return this.department; // ✅ allowed because it's protected
+  }
+
+  // getSalary() ❌ Not accessible here (private)
+}
+
+const emp = new Employee("Devanshu", 50000, "IT");
+
+console.log(emp.name); // ✅ public - accessible
+console.log(emp.getDetails()); // ✅ public method
+
+// console.log(emp.salary);   // ❌ Error: 'salary' is private
+// console.log(emp.department); // ❌ Error: 'department' is protected
 ```
