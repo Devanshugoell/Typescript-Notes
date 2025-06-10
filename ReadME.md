@@ -461,3 +461,36 @@ dog.move(); // ✅ Buddy is moving
 
 // const animal = new Animal("Generic"); // ❌ Error: Cannot create an instance of an abstract class
 ```
+
+## 📘 TypeScript Interfaces
+
+An `interface` defines the **shape of an object**. It is used to **enforce type-checking** and provide better structure in your code.
+
+- Describes properties, methods, and their types.
+- Supports optional properties, readonly properties, and method signatures.
+- Can be **extended** or **implemented** by classes.
+
+---
+
+### ✅ Example: Interface for an Object
+
+```ts
+interface Person {
+  name: string;
+  age: number;
+  readonly id: number;
+  greet(): void;
+}
+
+const user: Person = {
+  name: "Devanshu",
+  age: 22,
+  id: 1,
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+user.greet(); // ✅ Hello, my name is Devanshu
+// user.id = 2; // ❌ Error: Cannot assign to 'id' because it is a read-only property
+```
