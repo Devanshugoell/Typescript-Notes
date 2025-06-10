@@ -305,3 +305,53 @@ console.log(book.id); // ✅ 1
 book.title = "New Title"; // ✅ OK
 // book.id = 2;               // ❌ Error: Cannot assign to 'id' because it is a read-only property
 ```
+
+## 🧬 TypeScript Class Inheritance
+
+Inheritance allows one class to extend another, sharing and reusing code.
+
+- Use the `extends` keyword for inheritance.
+- Use `super()` to call the parent class constructor.
+- Subclasses inherit public and protected members.
+
+---
+
+### ✅ Example: Inheritance with `Employee` and `Manager`
+
+```ts
+class Employee {
+  constructor(
+    public name: string,
+    private salary: number,
+    protected department: string
+  ) {}
+
+  public getDetails(): string {
+    return `Name: ${this.name}, Department: ${this.department}`;
+  }
+
+  private getSalary(): number {
+    return this.salary;
+  }
+}
+
+class Manager extends Employee {
+  constructor(name: string, salary: number, department: string) {
+    super(name, salary, department);
+  }
+
+  public getDepartment(): string {
+    return this.department; // ✅ allowed because it's protected
+  }
+
+  // getSalary() ❌ Not accessible here (private)
+}
+
+const emp = new Employee("Devanshu", 50000, "IT");
+
+console.log(emp.name); // ✅ public - accessible
+console.log(emp.getDetails()); // ✅ public method
+
+// console.log(emp.salary);      // ❌ Error: 'salary' is private
+// console.log(emp.department); // ❌ Error: 'department' is protected
+```
