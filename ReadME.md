@@ -355,3 +355,47 @@ console.log(emp.getDetails()); // ✅ public method
 // console.log(emp.salary);      // ❌ Error: 'salary' is private
 // console.log(emp.department); // ❌ Error: 'department' is protected
 ```
+
+## ⚙️ TypeScript Getters and Setters
+
+TypeScript allows you to use **get** and **set** accessors to control how properties are accessed or mutated in a class.
+
+- `get`: Used to access a property.
+- `set`: Used to modify a property with custom logic (e.g. validation).
+
+---
+
+### ✅ Example: Getters and Setters in a Class
+
+```ts
+class Person {
+  private _age: number;
+
+  constructor(private name: string, age: number) {
+    this._age = age;
+  }
+
+  get age(): number {
+    return this._age;
+  }
+
+  set age(value: number) {
+    if (value < 0) {
+      throw new Error("Age cannot be negative");
+    }
+    this._age = value;
+  }
+
+  get info(): string {
+    return `${this.name} is ${this._age} years old.`;
+  }
+}
+
+const p = new Person("Devanshu", 22);
+
+console.log(p.age); // ✅ Getter: 22
+p.age = 25; // ✅ Setter works
+console.log(p.info); // ✅ Getter: Devanshu is 25 years old
+
+// p.age = -5;       // ❌ Throws error: Age cannot be negative
+```
